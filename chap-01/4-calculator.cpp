@@ -10,7 +10,7 @@ void display_result(int result)
 }
 
 // Check the operation
-int add(const std::vector<int> &values)
+int add(const std::vector<int>& values)
 {
     int result = 0;
     for (auto v : values)
@@ -20,7 +20,7 @@ int add(const std::vector<int> &values)
     return result;
 }
 
-int multiply(const std::vector<int> &values)
+int multiply(const std::vector<int>& values)
 {
     auto result = 1;
     for (auto v : values)
@@ -30,7 +30,7 @@ int multiply(const std::vector<int> &values)
     return result;
 }
 
-int sub(const std::vector<int> &values)
+int sub(const std::vector<int>& values)
 {
     auto result = values[0];
     for (auto i = 1; i < values.size(); ++i)
@@ -40,7 +40,7 @@ int sub(const std::vector<int> &values)
     return result;
 }
 
-int compute_result(char op, const std::vector<int> &values)
+int compute_result(char op, const std::vector<int>& values)
 {
     switch (op)
     {
@@ -64,7 +64,7 @@ Cette fonction verifie trois informations :
 - l’opérateur,
 - les opérandes.
 */
-bool parse_params(char& op, std::vector<int>& values, int argc, char **argv)
+bool parse_params(char& op, std::vector<int>& values, int argc, char** argv)
 {
     if (argc < 2)
     {
@@ -78,7 +78,6 @@ bool parse_params(char& op, std::vector<int>& values, int argc, char **argv)
         std::cerr << "Expected operator to be '+', '*' or '-'." << std::endl;
         return false;
     }
-
 
     for (auto arg_i = 2; arg_i < argc; ++arg_i)
     {
@@ -96,10 +95,10 @@ bool parse_params(char& op, std::vector<int>& values, int argc, char **argv)
     return true;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     // Parsing program parameters.
-    char op = '?';
+    char             op = '?';
     std::vector<int> values;
 
     if (!parse_params(op, values, argc, argv))
@@ -116,4 +115,4 @@ int main(int argc, char **argv)
     return 0;
 }
 
-// For exemple: .\hello.exe + 4 5
+// For exemple: .\build\chap-01\c1-4-calculator + 5 4
